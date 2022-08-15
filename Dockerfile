@@ -2,6 +2,7 @@
 FROM ruby:2.5
 # everthing we do below will customize the prebuilt image
 
+RUN gem update --system 3.2.3
 # run the following so that we have updated versions of node and yarn 
 RUN curl https://deb.nodesource.com/setup_16.x | bash
 RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
