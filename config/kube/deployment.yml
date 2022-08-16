@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: rails-app
-        image: daniel-chapdealine/kubernetes-rails-example:latest
+        image: danielchapdelaine/kubernetes-rails-example:latest
         ports:
         - containerPort: 3000
