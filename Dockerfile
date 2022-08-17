@@ -3,6 +3,7 @@ FROM ruby:2.5
 ARG RAILS_MASTER_KEY
 # everthing we do below will customize the prebuilt image
 ENV RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
+ENV RAILS_SERVE_STATIC_FILES=true
 ENV RAILS_ENV=production
 RUN gem update --system 3.2.3
 # run the following so that we have updated versions of node and yarn 
