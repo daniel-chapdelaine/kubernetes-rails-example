@@ -1,7 +1,9 @@
 # this fetches a prebuilt docker image for us to customize
 FROM ruby:2.5
+ARG RAILS_MASTER_KEY
 # everthing we do below will customize the prebuilt image
-
+ENV RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
+ENV RAILS_ENV=production
 RUN gem update --system 3.2.3
 # run the following so that we have updated versions of node and yarn 
 RUN curl https://deb.nodesource.com/setup_16.x | bash

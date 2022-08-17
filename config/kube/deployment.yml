@@ -15,5 +15,14 @@ spec:
       containers:
       - name: rails-app
         image: danielchapdelaine/kubernetes-rails-example:latest
+        envFrom:
+        - configMapRef:
+            name: env
         ports:
         - containerPort: 3000
+      # initContainers:
+      # - name: migrations
+      #   image: danielchapdelaine/kubernetes-rails-example:latest
+      #   command:
+      #   - rake
+      #   - db:abort_if_pending_migrations
