@@ -1,0 +1,25 @@
+version: '2'
+services:
+    mysql: 
+        image: mysql:5.6
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: use_a_password
+            MYSQL_DATABASE: app_db
+            MYSQL_USER: user
+            MYSQL_PASSWORD: use_a_password
+        ports:
+            - "3307:3306"
+    app: 
+        build: 
+          context: .
+          dockerfile: ./Dockerfile
+        ports: 
+            - "3000:3000"
+        depends_on:
+            - mysql
+        links:
+            - mysql
+        environment:
+            DB_PASSWORD: use_a_password
+            DB_HOST: mysql
