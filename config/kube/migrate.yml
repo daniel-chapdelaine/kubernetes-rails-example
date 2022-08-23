@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: migrate
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrate
+          image: danielchapdelaine/kubernetes-rails-example:latest
+          envFrom:
+          - configMapRef:
+              name: env
+          command: ['rails']
+          args: ['db:migrate']

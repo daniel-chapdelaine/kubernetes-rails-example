@@ -1,0 +1,29 @@
+<div class="words-container">
+  
+  <% if @word.errors.any? %>
+    <% @word.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
+
+  <div class="words-input">
+    <div class="squirrel">
+      <%= image_tag "squirrel.png", style: 'height:auto;width:70px;' %>
+      <div>"Tell me your favorite word and I'll squirrel it away!"</div>
+    </div>
+    <div class="words-input-form">
+      <form method="post" action="/words/new" class="button_to">
+        <input type="hidden" name="authenticity_token" value="words_post_action_token">
+
+        <input id="word_name" name="text" size="30" type="text" />
+        <input value="Speak" type="submit" />
+      </form>
+    </div>
+  </div>
+
+  <div class="words">
+    <% @words.each do |word| %>
+      <div><%= word %></div>
+    <%end%>
+  </div>
+</div>

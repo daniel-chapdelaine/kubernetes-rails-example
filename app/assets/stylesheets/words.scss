@@ -1,0 +1,41 @@
+// Place all the styles related to the words controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: rgba(245, 163, 110, .4);
+}
+
+.words-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 33%;
+  margin: auto;
+  padding-top: 36px;
+}
+
+.words-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.words-input-form {
+  display: flex;
+  gap: 12px;
+}
+
+.words {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.squirrel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}

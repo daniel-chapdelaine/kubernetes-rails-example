@@ -15,5 +15,8 @@ spec:
       containers:
       - name: rails-app
         image: danielchapdelaine/kubernetes-rails-example:latest
+        envFrom:
+        - configMapRef:
+            name: env
         ports:
         - containerPort: 3000
